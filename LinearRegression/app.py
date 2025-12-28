@@ -12,11 +12,18 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 st.set_page_config("Linear Regression", layout="centered")
 
 # Load CSS
-def load_css(file):
-    with open(file) as f:
+import os
+
+
+def load_css(file_path):
+    with open(file_path) as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-load_css("LinearRegression/style.css")
+BASE_DIR = os.path.dirname(__file__)
+css_path = os.path.join(BASE_DIR, "style.css")
+
+load_css(css_path)
+
 
 
 # Title
@@ -129,4 +136,5 @@ st.markdown(
 )
 
 st.markdown('</div>', unsafe_allow_html=True)
+
 
