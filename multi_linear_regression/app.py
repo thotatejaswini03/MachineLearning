@@ -12,11 +12,17 @@ st.set_page_config(
     page_title="Multiple Linear Regression",
     layout="centered"
 )
-def load_css(file):
-    with open(file) as f:
+import os
+
+
+def load_css(file_path):
+    with open(file_path) as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-load_css("style.css")
+BASE_DIR = os.path.dirname(__file__)
+css_path = os.path.join(BASE_DIR, "style.css")
+
+load_css(css_path)
 st.markdown("""
 <div class="card">
     <h1> Multiple Linear Regression </h1>
@@ -123,4 +129,5 @@ st.markdown(
     f'<div class="prediction-box"> Predicted Tip: $ {predicted_tip:.2f}</div>',
     unsafe_allow_html=True
 )
+
 st.markdown('</div>', unsafe_allow_html=True)
