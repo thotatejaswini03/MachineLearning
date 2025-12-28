@@ -16,7 +16,8 @@ def load_css(file):
     with open(file) as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-load_css("style.css")
+load_css("LinearRegression/style.css")
+
 
 # Title
 st.markdown("""
@@ -128,3 +129,4 @@ st.markdown(
 )
 
 st.markdown('</div>', unsafe_allow_html=True)
+
